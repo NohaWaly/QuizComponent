@@ -111,5 +111,10 @@ class AnswerController extends Controller
         //
     }
 
-    public function getusersocre
+    public function getusersocre(Request $request){
+        $ans= Answer::where('userid', $request->get('userid'))->get();
+        return response()->json($ans);
+
+    }
+   
 }

@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -23,7 +22,7 @@
         <th>Skill type</th>
         <th>Pass Score</th>
         <th>Duration</th>
-        <th colspan="2">Action</th>
+        <th colspan="3">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -34,11 +33,11 @@
         <td>{{$quiz['skilltype']}}</td>
          <td>{{$quiz['passScore']}}</td>
         <td>{{$quiz['duration']}}</td>
-        
+        <td><a href="{{action('QuizController@edit', $quiz['id'])}}" class="btn btn-warning">Edit</a></td>
         <td>
         <form action="{{url('answer/'.$quiz['id'])}}" method="post">
               {{csrf_field()}}
-              <button class="btn btn-warning" type="submit">Take Quiz</button>
+              <button class="btn btn-primary" type="submit">Take Quiz</button>
             </form>
           </td>
         <td>

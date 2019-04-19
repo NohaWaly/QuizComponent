@@ -19,9 +19,12 @@ Route::resource('quizzes','QuizController');
 Route::resource('answer','AnswerController');
 
 //Route::resource('answer/{id}','AnswerController@index');
-
+//msh sha3'ala
 Route::post('answer/{id}','AnswerController@index');
-//Route::resource('quizzes/delete','QuizController@destroy');
+
+Route::post('/edit','QuizController@update');
+
+
 
 Route::get('/delete', function () {
     return ('welcome');

@@ -130,34 +130,74 @@ class QuizController extends Controller
             'skilltype' =>'required',
             'passsocre' =>'required|integer',
             'duration' =>'required|integer',
-            'question1'=> 'required',
-            'choice1a' =>'required',
-            'choice2a'  =>'required',
-            'choice3a' =>'required',
-            'modelans1' =>'required',
-            'question2' =>'required',
-            'choice1b' =>'required',
-            'choice2b' =>'required',
-            'choice3b'=>'required',
-            'modelans2'=>'required',
-            'question3'=>'required',
-            'choice1c'=>'required',
-            'choice2c'=>'required',
-            'choice3c'=>'required',
-            'modelans3' =>'required',
-            'question4'=>'required',
-            'choice1d'=>'required',
-            'choice2d'=>'required',
-            'choice3d'=>'required',
-            'modelans4'=>'required',
-            'question5'=>'required',
-            'choice1e'=>'required',
-            'choice2e'=>'required',
-            'choice3e'=>'required',
-            'modelans5'=>'required',
+            
         ]);
 
         $quiz = new Quiz();
+        $quiz->title=$request->get('quiztitle');
+        $quiz->skilltype = $request->get('skilltype');
+        $quiz->passScore = $request->get('passsocre');
+        $quiz->duration = $request->get('duration');
+        $quiz->questioncounter = 0;
+        $quiz->save();
+
+        return response()->json($quiz);
+
+    }
+
+    public function addquestion1(Request $request){
+        $id = $request->get('id');
+        $quiz = Quiz::find($id);
+        $counter = 1;
+        $question = $quiz->question;
+        $quiz->question1= $request->get('question');
+        $quiz->choice1a= $request->get('choice1');
+        $quiz->choice2a= $request->get('choice2');
+        $quiz->choice3a= $request->get('choice3');
+        $quiz->modelans1=$request->get('modelans');
+        $quiz->save();
+        return response()->json($quiz);
+
+    }
+
+    public function deletequiz(Request $request)
+    {
+        $id= $request->get('id');
+        $user = Quiz::find($id);
+        $user->delete();
+        return "quiz has been  deleted";
+    }
+
+
+    public function getskilltype(Request $request){
+       $quizzes= Quiz::where('skilltype', $request->get('skilltype'))->get();
+       return response()->json($quizzes);
+
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $quiz = Quiz::find($id);
+        return view('quizzes.edit',compact('quiz','id'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request)
+    {
+        $id = $request->get('id');
+        $quiz = Quiz::find($id);
         $quiz->title=$request->get('quiztitle');
         $quiz->skilltype = $request->get('skilltype');
         $quiz->passScore = $request->get('passsocre');
@@ -195,37 +235,7 @@ class QuizController extends Controller
 
         $quiz->save();
 
-        return response()->json($quiz);
-
-    }
-
-    public function getskilltype(Request $request){
-       $quizzes= Quiz::where('skilltype', $request->get('skilltype'))->get();
-       return response()->json($quizzes);
-
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-       
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-       
+        return redirect('quizzes')->with('success','quiz has ben updated');
 
     }
 
