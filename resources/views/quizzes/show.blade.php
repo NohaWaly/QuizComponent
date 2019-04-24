@@ -65,9 +65,9 @@
                      <div class="row">
                             <div class="form-group col-md-4"></div>
                             <div class="form-group col-md-4" style="margin-left: 30px;">
-                            <label> {{$quiz->choice1a}}</label><br>
-                            <label> {{$quiz->choice2a}}</label><br>
-                            <label> {{$quiz->choice3a}} </label>
+                            <label> {{$quiz->choice11}}</label><br>
+                            <label> {{$quiz->choice21}}</label><br>
+                            <label> {{$quiz->choice31}} </label>
                          
                            
                               </div>
@@ -87,9 +87,9 @@
                  <div class="row">
                         <div class="form-group col-md-4"></div>
                         <div class="form-group col-md-4" style="margin-left: 30px;">
-                        <label> {{$quiz->choice1b}}</label> <br>
-                        <label> {{$quiz->choice2b}}</label><br>
-                        <label> {{$quiz->choice3b}}</label>  
+                        <label> {{$quiz->choice12}}</label> <br>
+                        <label> {{$quiz->choice22}}</label><br>
+                        <label> {{$quiz->choice32}}</label>  
                           </div>
                        
                             
@@ -107,9 +107,9 @@
                  <div class="row">
                         <div class="form-group col-md-4"></div>
                         <div class="form-group col-md-4" style="margin-left: 30px;">
-                        <label> {{$quiz->choice1c}}</label><br>
-                        <label> {{$quiz->choice2c}}</label><br>
-                        <label> {{$quiz->choice3c}} </label>
+                        <label> {{$quiz->choice13}}</label><br>
+                        <label> {{$quiz->choice23}}</label><br>
+                        <label> {{$quiz->choice33}} </label>
               
                           </div>
                        
@@ -128,9 +128,9 @@
                  <div class="row">
                         <div class="form-group col-md-4"></div>
                         <div class="form-group col-md-4" style="margin-left: 30px;">
-                        <label> {{$quiz->choice1d}}</label><br>
-                        <label> {{$quiz->choice2d}}</label><br>
-                        <label> {{$quiz->choice3d}} </label>
+                        <label> {{$quiz->choice14}}</label><br>
+                        <label> {{$quiz->choice24}}</label><br>
+                        <label> {{$quiz->choice34}} </label>
                           </div>
                        
                             
@@ -148,9 +148,9 @@
                  <div class="row">
                         <div class="form-group col-md-4"></div>
                         <div class="form-group col-md-4" style="margin-left: 30px;">
-                        <label> {{$quiz->choice1e}}</label><br>
-                        <label> {{$quiz->choice2e}}</label><br>
-                        <label> {{$quiz->choice3e}} </label>
+                        <label> {{$quiz->choice15}}</label><br>
+                        <label> {{$quiz->choice25}}</label><br>
+                        <label> {{$quiz->choice35}} </label>
                     
                           </div>
                        

@@ -20,6 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //return view for a quiz
 Route::get('quizzes/{id}', 'QuizController@show');
 
+
 //return view for all quizzes in the system
 Route::get('quizzes', 'QuizController@index');
 
@@ -30,19 +31,7 @@ Route::get('quizzes/create', 'QuizController@create');
 Route::post('quizzes/addnewquiz', 'QuizController@createnewquiz');
 
 //take parameters of 1st question main attribute & id of quiz
-Route::post('quizzes/addquestion1', 'QuizController@addquestion1');
-
-//take parameters of 1st question main attribute & id of quiz
-Route::post('quizzes/addquestion2', 'QuizController@addquestion2');
-
-//take parameters of 1st question main attribute & id of quiz
-Route::post('quizzes/addquestion3', 'QuizController@addquestion3');
-
-//take parameters of 1st question main attribute & id of quiz
-Route::post('quizzes/addquestion4', 'QuizController@addquestion4');
-
-//take parameters of 1st question main attribute & id of quiz
-Route::post('quizzes/addquestion4', 'QuizController@addquestion4');
+Route::post('quizzes/addquestion', 'QuizController@addquestion');
 
 //take id as parameter
  Route::post('quizzes/deletequiz', 'QuizController@deletequiz');
@@ -53,4 +42,5 @@ Route::post('quizzes/getskilltype', 'QuizController@getskilltype');
 //take userid as parameter and return jason obj
 Route::post('answer/getusersocre', 'AnswerController@getusersocre');
 
-
+//take parameter of quiz id
+Route::post('quizzes/getquiz', 'QuizController@getquiz');
