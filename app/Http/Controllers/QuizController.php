@@ -77,33 +77,33 @@ class QuizController extends Controller
         $quiz->duration = $request->get('duration');
 
         $quiz->question1= $request->get('question1');
-        $quiz->choice1a= $request->get('choice1a');
-        $quiz->choice2a= $request->get('choice2a');
-        $quiz->choice3a= $request->get('choice3a');
+        $quiz->choice11= $request->get('choice1a');
+        $quiz->choice21= $request->get('choice2a');
+        $quiz->choice31= $request->get('choice3a');
         $quiz->modelans1=$request->get('modelans1');
 
         $quiz->question2= $request->get('question2');
-        $quiz->choice1b= $request->get('choice1b');
-        $quiz->choice2b= $request->get('choice2b');
-        $quiz->choice3b= $request->get('choice3b');
+        $quiz->choice12= $request->get('choice1b');
+        $quiz->choice22= $request->get('choice2b');
+        $quiz->choice32= $request->get('choice3b');
         $quiz->modelans2=$request->get('modelans2');
 
         $quiz->question3= $request->get('question3');
-        $quiz->choice1c= $request->get('choice1c');
-        $quiz->choice2c= $request->get('choice2c');
-        $quiz->choice3c= $request->get('choice3c');
+        $quiz->choice13= $request->get('choice1c');
+        $quiz->choice23= $request->get('choice2c');
+        $quiz->choice33= $request->get('choice3c');
         $quiz->modelans3=$request->get('modelans3');
 
         $quiz->question4= $request->get('question4');
-        $quiz->choice1d= $request->get('choice1d');
-        $quiz->choice2d= $request->get('choice2d');
-        $quiz->choice3d= $request->get('choice3d');
+        $quiz->choice14= $request->get('choice1d');
+        $quiz->choice24= $request->get('choice2d');
+        $quiz->choice34= $request->get('choice3d');
         $quiz->modelans4=$request->get('modelans4');
 
         $quiz->question5= $request->get('question5');
-        $quiz->choice1e= $request->get('choice1e');
-        $quiz->choice2e= $request->get('choice2e');
-        $quiz->choice3e= $request->get('choice3e');
+        $quiz->choice15= $request->get('choice1e');
+        $quiz->choice25= $request->get('choice2e');
+        $quiz->choice35= $request->get('choice3e');
         $quiz->modelans5=$request->get('modelans5');
 
         $quiz->save();
@@ -121,6 +121,14 @@ class QuizController extends Controller
     {
         $quiz = Quiz::find($id);
         return view('quizzes.show')->with('quiz',$quiz);
+    }
+
+    public function getquiz(Request $request)
+    {
+        $id= $request->get('quizid');
+        $quiz = Quiz::find($id);
+        return response()->json($quiz);
+
     }
 
     public function createnewquiz(Request $request){
@@ -145,17 +153,19 @@ class QuizController extends Controller
 
     }
 
-    public function addquestion1(Request $request){
+    public function addquestion(Request $request){
         $id = $request->get('id');
         $quiz = Quiz::find($id);
-        $counter = 1;
-        $question = $quiz->question;
-        $quiz->question1= $request->get('question');
-        $quiz->choice1a= $request->get('choice1');
-        $quiz->choice2a= $request->get('choice2');
-        $quiz->choice3a= $request->get('choice3');
-        $quiz->modelans1=$request->get('modelans');
-        $quiz->save();
+        $counter = $request->get('quesid');
+        if($counter > 5){
+            return "max num of questions is 5";
+        }
+        $quiz['question'.$counter]= $request->get('question');
+        $quiz['choice1'.$counter]= $request->get('choice1');
+        $quiz['choice2'.$counter]= $request->get('choice2');
+        $quiz['choice3'.$counter]= $request->get('choice3');
+        $quiz['modelans'.$counter]=$request->get('modelans');
+         $quiz->save();
         return response()->json($quiz);
 
     }
@@ -163,8 +173,8 @@ class QuizController extends Controller
     public function deletequiz(Request $request)
     {
         $id= $request->get('id');
-        $user = Quiz::find($id);
-        $user->delete();
+        $quiz = Quiz::find($id);
+        $quiz->delete();
         return "quiz has been  deleted";
     }
 
@@ -204,33 +214,33 @@ class QuizController extends Controller
         $quiz->duration = $request->get('duration');
 
         $quiz->question1= $request->get('question1');
-        $quiz->choice1a= $request->get('choice1a');
-        $quiz->choice2a= $request->get('choice2a');
-        $quiz->choice3a= $request->get('choice3a');
+        $quiz->choice11= $request->get('choice1a');
+        $quiz->choice21= $request->get('choice2a');
+        $quiz->choice31= $request->get('choice3a');
         $quiz->modelans1=$request->get('modelans1');
 
         $quiz->question2= $request->get('question2');
-        $quiz->choice1b= $request->get('choice1b');
-        $quiz->choice2b= $request->get('choice2b');
-        $quiz->choice3b= $request->get('choice3b');
+        $quiz->choice12= $request->get('choice1b');
+        $quiz->choice22= $request->get('choice2b');
+        $quiz->choice32= $request->get('choice3b');
         $quiz->modelans2=$request->get('modelans2');
 
         $quiz->question3= $request->get('question3');
-        $quiz->choice1c= $request->get('choice1c');
-        $quiz->choice2c= $request->get('choice2c');
-        $quiz->choice3c= $request->get('choice3c');
+        $quiz->choice13= $request->get('choice1c');
+        $quiz->choice23= $request->get('choice2c');
+        $quiz->choice33= $request->get('choice3c');
         $quiz->modelans3=$request->get('modelans3');
 
         $quiz->question4= $request->get('question4');
-        $quiz->choice1d= $request->get('choice1d');
-        $quiz->choice2d= $request->get('choice2d');
-        $quiz->choice3d= $request->get('choice3d');
+        $quiz->choice14= $request->get('choice1d');
+        $quiz->choice24= $request->get('choice2d');
+        $quiz->choice34= $request->get('choice3d');
         $quiz->modelans4=$request->get('modelans4');
 
         $quiz->question5= $request->get('question5');
-        $quiz->choice1e= $request->get('choice1e');
-        $quiz->choice2e= $request->get('choice2e');
-        $quiz->choice3e= $request->get('choice3e');
+        $quiz->choice15= $request->get('choice1e');
+        $quiz->choice25= $request->get('choice2e');
+        $quiz->choice35= $request->get('choice3e');
         $quiz->modelans5=$request->get('modelans5');
 
         $quiz->save();
