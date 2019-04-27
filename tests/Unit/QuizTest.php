@@ -18,8 +18,7 @@ public function testPostQuiz()
         'passsocre' => 1,
         'duration' => 1,
     ];
-    $this->json('post','api/quizzes/addnewquiz', $data)
-     ->assertStatus(201);  
+    $this->json('post','api/quizzes/addnewquiz', $data)->assertStatus(201);  
   }
 
 //this test make sure that api addquestion is  working correct with storing obj in db 
