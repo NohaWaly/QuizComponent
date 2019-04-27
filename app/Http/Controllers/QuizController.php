@@ -160,20 +160,18 @@ class QuizController extends Controller
     }
 
     public function addquestion(Request $request){
-        // $id = $request->get('id');
-        
-        // $quiz = Quiz::find($id);
         $exist= Quiz::where('id', $request->get('id'))->exists();
         $msg = "Quiz doesn't exist";
         $counter = $request->get('quesid');
         if(!$exist){
             return [$msg,200];
         }
-        
+
         elseif($counter > 5){
             return ["max num of questions is 5",200];
         }
-  else{
+        else{
+
         $id = $request->get('id');
         $quiz = Quiz::find($id);
         $quiz['question'.$counter]= $request->get('question');
