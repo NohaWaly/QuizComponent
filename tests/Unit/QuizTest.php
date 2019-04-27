@@ -27,8 +27,8 @@ public function testPostQuiz()
   public function testPostQuestion()
 {
     $data = [
-        'id'=>5,
-        'quesid'=>6,
+        'id'=>8,
+        'quesid'=>1,
         'question' => 'web',
         'choice1' =>'backend',
         'choice2' => 'a',
