@@ -17,9 +17,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+
 //return view for a quiz
 Route::get('quizzes/{id}', 'QuizController@show');
-
 
 //return view for all quizzes in the system
 Route::get('quizzes', 'QuizController@index');
@@ -30,7 +31,8 @@ Route::get('quizzes/create', 'QuizController@create');
 //take parameters of quiz main attribute
 Route::post('quizzes/addnewquiz', 'QuizController@createnewquiz');
 
-//take parameters of 1st question main attribute & id of quiz
+
+//take parameters of  question main attribute & id of quiz
 Route::post('quizzes/addquestion', 'QuizController@addquestion');
 
 //take id as parameter

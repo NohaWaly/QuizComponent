@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->string('userid');
             $table->string('quizid');
-            $table->string('score');
+            $table->integer('score')->default(0);
         });
     }
 

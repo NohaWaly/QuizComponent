@@ -112,8 +112,16 @@ class AnswerController extends Controller
     }
 
     public function getusersocre(Request $request){
-        $ans= Answer::where('userid', $request->get('userid'))->get();
-        return response()->json($ans);
+        $exist= Answer::where('userid', $request->get('userid'))->exists();
+        $msg = "User doesn't exist";
+        if(!$exist){
+            return [$msg,200];
+        }
+        else{
+            $ans= Answer::where('userid', $request->get('userid'))->get();
+            return [response()->json($ans),200];
+        }
+        
 
     }
    
