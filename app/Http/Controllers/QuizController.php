@@ -105,7 +105,7 @@ class QuizController extends Controller
         $quiz->choice25= $request->get('choice2e');
         $quiz->choice35= $request->get('choice3e');
         $quiz->modelans5=$request->get('modelans5');
-
+  
         $quiz->save();
 
         return redirect('quizzes')->with('success','quiz has ben added');
@@ -125,9 +125,16 @@ class QuizController extends Controller
 
     public function getquiz(Request $request)
     {
-        $id= $request->get('quizid');
-        $quiz = Quiz::find($id);
-        return response()->json($quiz);
+        $exist= Quiz::where('id', $request->get('quizid'))->exists();
+        $msg = "Quiz doesn't exist";
+        if(!$exist){
+            return [$msg,200];
+        }
+        else{
+            $id= $request->get('quizid');
+            $quiz = Quiz::find($id);
+            return [response()->json($quiz),200];
+        }  
 
     }
 
@@ -146,42 +153,65 @@ class QuizController extends Controller
         $quiz->skilltype = $request->get('skilltype');
         $quiz->passScore = $request->get('passsocre');
         $quiz->duration = $request->get('duration');
-        $quiz->questioncounter = 0;
         $quiz->save();
-
-        return response()->json($quiz);
+    
+        return response()->json($quiz,201);
 
     }
 
     public function addquestion(Request $request){
-        $id = $request->get('id');
-        $quiz = Quiz::find($id);
+        // $id = $request->get('id');
+        
+        // $quiz = Quiz::find($id);
+        $exist= Quiz::where('id', $request->get('id'))->exists();
+        $msg = "Quiz doesn't exist";
+        if(!$exist){
+            return [$msg,200];
+        }
         $counter = $request->get('quesid');
         if($counter > 5){
-            return "max num of questions is 5";
+            return ["max num of questions is 5",200];
         }
+
         $quiz['question'.$counter]= $request->get('question');
         $quiz['choice1'.$counter]= $request->get('choice1');
         $quiz['choice2'.$counter]= $request->get('choice2');
         $quiz['choice3'.$counter]= $request->get('choice3');
         $quiz['modelans'.$counter]=$request->get('modelans');
          $quiz->save();
-        return response()->json($quiz);
+        return response()->json($quiz,201);
 
     }
 
     public function deletequiz(Request $request)
     {
-        $id= $request->get('id');
+        $exist= Quiz::where('id', $request->get('id'))->exists();
+        $msg = "Quiz doesn't exist";
+        if(!$exist){
+            return [$msg,200];
+        }
+        else{
+            $id= $request->get('id');
         $quiz = Quiz::find($id);
         $quiz->delete();
-        return "quiz has been  deleted";
+        return ["Quiz has been deleted",200];
+        }
+        
     }
 
 
     public function getskilltype(Request $request){
-       $quizzes= Quiz::where('skilltype', $request->get('skilltype'))->get();
-       return response()->json($quizzes);
+
+        $exist= Quiz::where('skilltype', $request->get('skilltype'))->exists();
+        $msg = "Skilltype doesn't exist";
+        if(!$exist){
+            return [$msg,200];
+        }
+        else{
+            $quizzes= Quiz::where('skilltype', $request->get('skilltype'))->get();
+            return [response()->json($quizzes),200];
+        }
+       
 
     }
 

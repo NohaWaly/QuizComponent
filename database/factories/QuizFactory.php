@@ -19,7 +19,7 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Quiz::class, function (Faker $faker) {
     return [
-        'title' => $faker->name,
+        'title' => $faker->sentence,
         'skilltype' => $faker->sentence,
         'passScore' => 0,
         'duration' => 1.

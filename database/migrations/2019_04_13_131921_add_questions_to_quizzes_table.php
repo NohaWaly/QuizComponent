@@ -14,31 +14,31 @@ class AddQuestionsToQuizzesTable extends Migration
     public function up()
     {
         Schema::table('quizzes', function (Blueprint $table) {
-            $table->string('question1');
-            $table->string('choice1a');
-            $table->string('choice2a');
-            $table->string('choice3a');
-            $table->string('modelans1');
-            $table->string('question2');
-            $table->string('choice1b');
-            $table->string('choice2b');
-            $table->string('choice3b');
-            $table->string('modelans2');
-            $table->string('question3');
-            $table->string('choice1c');
-            $table->string('choice2c');
-            $table->string('choice3c');
-            $table->string('modelans3');
-            $table->string('question4');
-            $table->string('choice1d');
-            $table->string('choice2d');
-            $table->string('choice3d');
-            $table->string('modelans4');
-            $table->string('question5');
-            $table->string('choice1e');
-            $table->string('choice2e');
-            $table->string('choice3e');
-            $table->string('modelans5');
+            $table->string('question1')->nullable();
+            $table->string('choice11')->nullable();
+            $table->string('choice21')->nullable();
+            $table->string('choice31')->nullable();
+            $table->string('modelans1')->nullable();
+            $table->string('question2')->nullable();
+            $table->string('choice12')->nullable();
+            $table->string('choice22')->nullable();
+            $table->string('choice32')->nullable();
+            $table->string('modelans2')->nullable();
+            $table->string('question3')->nullable();
+            $table->string('choice13')->nullable();
+            $table->string('choice23')->nullable();
+            $table->string('choice33')->nullable();
+            $table->string('modelans3')->nullable();
+            $table->string('question4')->nullable();
+            $table->string('choice14')->nullable();
+            $table->string('choice24')->nullable();
+            $table->string('choice34')->nullable();
+            $table->string('modelans4')->nullable();
+            $table->string('question5')->nullable();
+            $table->string('choice15')->nullable();
+            $table->string('choice25')->nullable();
+            $table->string('choice35')->nullable();
+            $table->string('modelans5')->nullable();
         });
     }
 
