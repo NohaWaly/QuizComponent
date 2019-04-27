@@ -166,10 +166,12 @@ class QuizController extends Controller
         if(!$exist){
             return [$msg,200];
         }
+
         elseif($counter > 5){
             return ["max num of questions is 5",200];
         }
         else{
+
         $id = $request->get('id');
         $quiz = Quiz::find($id);
         $quiz['question'.$counter]= $request->get('question');
@@ -177,9 +179,9 @@ class QuizController extends Controller
         $quiz['choice2'.$counter]= $request->get('choice2');
         $quiz['choice3'.$counter]= $request->get('choice3');
         $quiz['modelans'.$counter]=$request->get('modelans');
-        $quiz->save();
-        return response()->json($quiz,201);
-        }
+         $quiz->save();
+        return response()->json($quiz,200);
+  }
     }
 
     public function deletequiz(Request $request)

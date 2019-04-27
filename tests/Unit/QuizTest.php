@@ -27,8 +27,11 @@ public function testPostQuiz()
   public function testPostQuestion()
 {
     $data = [
+
         'id'=>8,
         'quesid'=>1,
+
+
         'question' => 'web',
         'choice1' =>'backend',
         'choice2' => 'a',
@@ -37,7 +40,7 @@ public function testPostQuiz()
 
     ];
     $this->json('post','api/quizzes/addquestion', $data)
-     ->assertStatus(201);  
+     ->assertStatus(200);  
   }
 
 //the vaildation of accessing wrong question number
