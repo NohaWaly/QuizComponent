@@ -6,7 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Quiz;
 
-class QuizTest extends TestCase
+class QuizTest extends TestCase 
 {
 
 //this test make sure that api addnewquiz is  working correct with storing obj in db

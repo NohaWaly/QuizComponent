@@ -25,7 +25,7 @@
 
         if (--timer < 0) {
         document.getElementById("time").innerHTML = "EXPIRED"; 
-        
+        window.location.href = "timeout";
   
 
 
@@ -102,9 +102,9 @@ function timedRefresh(timeoutPeriod) {
                      <div class="row">
                             <div class="form-group col-md-4"></div>
                             <div class="form-group col-md-4" style="margin-left: 30px;">
-                                    <input type="radio" name="choice1" value="{{$quiz->choice1a}}"> {{$quiz->choice11}}<br>
-                                    <input type="radio" name="choice1" value="{{$quiz->choice2a}}"> {{$quiz->choice21}}<br>
-                                    <input type="radio" name="choice1" value="{{$quiz->choice3a}}"> {{$quiz->choice31}} 
+                                    <input type="radio" name="choice1" value="{{$quiz->choice11}}"> {{$quiz->choice11}}<br>
+                                    <input type="radio" name="choice1" value="{{$quiz->choice21}}"> {{$quiz->choice21}}<br>
+                                    <input type="radio" name="choice1" value="{{$quiz->choice31}}"> {{$quiz->choice31}} 
                                     <input type="hidden" name="ans1" value="{{$quiz->modelans1}}">
                                     <input type="hidden" name="title" value="{{$quiz->title}}">
                               </div>
@@ -123,9 +123,9 @@ function timedRefresh(timeoutPeriod) {
                  <div class="row">
                         <div class="form-group col-md-4"></div>
                         <div class="form-group col-md-4" style="margin-left: 30px;">
-                        <input type="radio" name="choice2" value="{{$quiz->choice1b}}"> {{$quiz->choice12}}<br>
-                        <input type="radio" name="choice2" value="{{$quiz->choice2b}}"> {{$quiz->choice22}}<br>
-                        <input type="radio" name="choice2" value="{{$quiz->choice3b}} "> {{$quiz->choice32}} 
+                        <input type="radio" name="choice2" value="{{$quiz->choice12}}"> {{$quiz->choice12}}<br>
+                        <input type="radio" name="choice2" value="{{$quiz->choice22}}"> {{$quiz->choice22}}<br>
+                        <input type="radio" name="choice2" value="{{$quiz->choice32}} "> {{$quiz->choice32}} 
                         <input type="hidden" name="ans2" value="{{$quiz->modelans2}}">    
                           </div>
                        
@@ -144,9 +144,9 @@ function timedRefresh(timeoutPeriod) {
                  <div class="row">
                         <div class="form-group col-md-4"></div>
                         <div class="form-group col-md-4" style="margin-left: 30px;">
-                        <input type="radio" name="choice3" value=" {{$quiz->choice1c}}"> {{$quiz->choice13}}<br>
-                        <input type="radio" name="choice3" value=" {{$quiz->choice2c}}"> {{$quiz->choice23}}<br>
-                        <input type="radio" name="choice3" value=" {{$quiz->choice3c}}"> {{$quiz->choice33}} 
+                        <input type="radio" name="choice3" value=" {{$quiz->choice13}}"> {{$quiz->choice13}}<br>
+                        <input type="radio" name="choice3" value=" {{$quiz->choice23}}"> {{$quiz->choice23}}<br>
+                        <input type="radio" name="choice3" value=" {{$quiz->choice33}}"> {{$quiz->choice33}} 
                         <input type="hidden" name="ans3" value="{{$quiz->modelans3}}"> 
                           </div>
                        
@@ -165,9 +165,9 @@ function timedRefresh(timeoutPeriod) {
                  <div class="row">
                         <div class="form-group col-md-4"></div>
                         <div class="form-group col-md-4" style="margin-left: 30px;">
-                        <input type="radio" name="choice4" value=" {{$quiz->choice1d}}"> {{$quiz->choice14}}<br>
-                        <input type="radio" name="choice4" value=" {{$quiz->choice2d}}"> {{$quiz->choice24}}<br>
-                        <input type="radio" name="choice4" value=" {{$quiz->choice3d}}"> {{$quiz->choice34}} 
+                        <input type="radio" name="choice4" value=" {{$quiz->choice14}}"> {{$quiz->choice14}}<br>
+                        <input type="radio" name="choice4" value=" {{$quiz->choice24}}"> {{$quiz->choice24}}<br>
+                        <input type="radio" name="choice4" value=" {{$quiz->choice34}}"> {{$quiz->choice34}} 
                         <input type="hidden" name="ans4" value="{{$quiz->modelans4}}">  
                           </div>
                        
@@ -186,9 +186,9 @@ function timedRefresh(timeoutPeriod) {
                  <div class="row">
                         <div class="form-group col-md-4"></div>
                         <div class="form-group col-md-4" style="margin-left: 30px;">
-                        <input type="radio" name="choice5" value="{{$quiz->choice1e}}"> {{$quiz->choice15}}<br>
-                        <input type="radio" name="choice5" value="{{$quiz->choice2e}}"> {{$quiz->choice25}}<br>
-                        <input type="radio" name="choice5" value="{{$quiz->choice3e}}"> {{$quiz->choice35}} 
+                        <input type="radio" name="choice5" value="{{$quiz->choice15}}"> {{$quiz->choice15}}<br>
+                        <input type="radio" name="choice5" value="{{$quiz->choice25}}"> {{$quiz->choice25}}<br>
+                        <input type="radio" name="choice5" value="{{$quiz->choice35}}"> {{$quiz->choice35}} 
                         <input type="hidden" name="ans5" value="{{$quiz->modelans5}}"> 
                           </div>
                        

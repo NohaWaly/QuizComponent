@@ -22,6 +22,8 @@ Route::resource('answer','AnswerController');
 //msh sha3'ala
 Route::post('answer/{id}','AnswerController@index');
 
+Route::post('answer/timeout','AnswerController@show');
+
 Route::post('/edit','QuizController@update');
 
 
