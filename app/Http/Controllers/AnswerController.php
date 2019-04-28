@@ -36,29 +36,64 @@ class AnswerController extends Controller
      */
     public function store(Request $request)
     {
+        // $exist1= Answer::where('userid', $request->get('userid'))->exists();
+        // $id= $request->get('userid');
+        // $pervAnswer = Answer::find($id);
+        // if($request->title == $request->title )
+
+        // $result = Answer::where('userid', '=', 0)->where('quizid', '=', $request->title)->get();
+        // if($result){
+        //     $id = $result->get('id');
+        //     $prevScore = $result->get('score');
+        //     $nowScore=0;
+        //     if ($request->choice1==$request->ans1) {
+        //         $nowScore++;
+        //            }
+        //    if ($request->choice2==$request->ans2) {
+        //     $nowScore++;
+        //            }
+        //    if ($request->choice3==$request->ans3) {
+        //     $nowScore++;
+        //            }
+        //    if ($request->choice4==$request->ans4) {
+        //     $nowScore++;
+        //            }
+        //    if ($request->choice5==$request->ans5) {
+        //     $nowScore++;
+        //            }
+        //     if($prevScore >= $nowScore ){
+        //         return "last time better";
+        //     }
+        //     else{
+        //         $result->update('score') =  $nowScore;
+
+        //     }
+        // }
+        // else{
+            $answer=new Answer();
+            $answer->userid=0;
+            $answer->quizid=$request->title;
+            $answer->score=0;
+        
+        if ($request->choice1==$request->ans1) {
+             $answer->score++;
+                }
+        if ($request->choice2==$request->ans2) {
+             $answer->score++;
+                }
+        if ($request->choice3==$request->ans3) {
+             $answer->score++;
+                }
+        if ($request->choice4==$request->ans4) {
+             $answer->score++;
+                }
+        if ($request->choice5==$request->ans5) {
+             $answer->score++;
+                }
+    
+            $answer->save();
                 
-                 $answer=new Answer();
-                $answer->userid=0;
-                $answer->quizid=$request->title;
-                $answer->score=0;
-                if ($request->choice1==$request->ans1) {
-                    $answer->score++;
-                }
-                if ($request->choice2==$request->ans2) {
-                    $answer->score++;
-                }
-                if ($request->choice3==$request->ans3) {
-                    $answer->score++;
-                }
-                if ($request->choice4==$request->ans4) {
-                    $answer->score++;
-                }
-                if ($request->choice5==$request->ans5) {
-                    $answer->score++;
-                }
-                $answer->save();
-                
-                return view('answer.result')->with('answer',$answer);
+            return view('answer.result')->with('answer',$answer);
 
                 //dd($answer);
 
