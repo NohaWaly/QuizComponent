@@ -8,12 +8,16 @@
   </head>
   <body>
     <div class="container">
+        <h2 style="text-align: center; margin-top:30px;">Admin Panel</h2><br>
     <br />
     @if (\Session::has('success'))
       <div class="alert alert-success">
         <p>{{ \Session::get('success') }}</p>
       </div><br />
      @endif
+    
+     <h5 style="display: inline; margin-right: 20px;">Create new Quiz</h5>
+     <a href="{{action('QuizController@create')}}" class="btn btn-success">Create</a><br><br>
     <table class="table table-striped">
     <thead>
       <tr>
