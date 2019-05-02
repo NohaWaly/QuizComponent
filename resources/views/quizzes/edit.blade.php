@@ -80,18 +80,18 @@
            <div class="row">
                   <div class="form-group col-md-3">
                       <label for="choice1a" >First choice  </label>
-                      <input type="text" class="form-control" name="choice1a" value="{{$quiz->choice1a}}">
+                      <input type="text" class="form-control" name="choice11" value="{{$quiz->choice11}}">
                     </div>
                  
                       <div class="form-group col-md-3">
                           <label for="choice2a">Second choice  </label>
-                          <input type="text" class="form-control" name="choice2a" value="{{$quiz->choice2a}}">
+                          <input type="text" class="form-control" name="choice21" value="{{$quiz->choice21}}">
                         </div>
         
                      
                           <div class="form-group col-md-3">
                               <label for="choice3a">Third choice  </label>
-                              <input type="text" class="form-control" name="choice3a" value="{{$quiz->choice3a}}">
+                              <input type="text" class="form-control" name="choice31" value="{{$quiz->choice31}}">
                             </div>
 
                             <div class="form-group col-md-3">
@@ -112,18 +112,18 @@
                <div class="row">
                       <div class="form-group col-md-3">
                           <label for="choice1b">First choice  </label>
-                          <input type="text" class="form-control" name="choice1b" value="{{$quiz->choice1b}}">
+                          <input type="text" class="form-control" name="choice12" value="{{$quiz->choice12}}">
                         </div>
                      
                           <div class="form-group col-md-3">
                               <label for="choice2b">Second choice  </label>
-                              <input type="text" class="form-control" name="choice2b" value="{{$quiz->choice2b}}">
+                              <input type="text" class="form-control" name="choice22" value="{{$quiz->choice22}}">
                             </div>
             
                          
                               <div class="form-group col-md-3">
                                   <label for="choice3b">Third choice  </label>
-                                  <input type="text" class="form-control" name="choice3b" value="{{$quiz->choice3b}}">
+                                  <input type="text" class="form-control" name="choice32" value="{{$quiz->choice32}}">
                              </div>
                                 <div class="form-group col-md-3">
                                     <label for="modelans2">Model Answer  </label>
@@ -144,18 +144,18 @@
                    <div class="row">
                           <div class="form-group col-md-3"> 
                               <label for="choice1c">First choice  </label>
-                              <input type="text" class="form-control" name="choice1c" value="{{$quiz->choice1c}}">
+                              <input type="text" class="form-control" name="choice13" value="{{$quiz->choice13}}">
                             </div>
                          
                               <div class="form-group col-md-3">
                                   <label for="choice2c">Second choice  </label>
-                                  <input type="text" class="form-control" name="choice2c" value="{{$quiz->choice2c}}">
+                                  <input type="text" class="form-control" name="choice23" value="{{$quiz->choice23}}">
                                 </div>
                 
                              
                                   <div class="form-group col-md-3">
                                       <label for="choice3c">Third choice  </label>
-                                      <input type="text" class="form-control" name="choice3c" value="{{$quiz->choice3c}}">
+                                      <input type="text" class="form-control" name="choice33" value="{{$quiz->choice33}}">
                                     </div>
 
                                     <div class="form-group col-md-3">
@@ -177,18 +177,18 @@
                        <div class="row">
                               <div class="form-group col-md-3">
                                   <label for="choice1d">First choice  </label>
-                                  <input type="text" class="form-control" name="choice1d" value="{{$quiz->choice1d}}">
+                                  <input type="text" class="form-control" name="choice14" value="{{$quiz->choice14}}">
                                 </div>
                              
                                   <div class="form-group col-md-3">
                                       <label for="choice2d">Second choice  </label>
-                                      <input type="text" class="form-control" name="choice2d" value="{{$quiz->choice2d}}">
+                                      <input type="text" class="form-control" name="choice24" value="{{$quiz->choice24}}">
                                     </div>
                     
                                  
                                       <div class="form-group col-md-3">
                                           <label for="choice3d">Third choice  </label>
-                                          <input type="text" class="form-control" name="choice3d" value="{{$quiz->choice3d}}">
+                                          <input type="text" class="form-control" name="choice34" value="{{$quiz->choice34}}">
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label for="modelans4">Model Answer  </label>
@@ -208,18 +208,18 @@
                            <div class="row">
                                   <div class="form-group col-md-3">
                                       <label for="choice1e">First choice  </label>
-                                      <input type="text" class="form-control" name="choice1e" value="{{$quiz->choice1e}}">
+                                      <input type="text" class="form-control" name="choice15" value="{{$quiz->choice15}}">
                                     </div>
                                  
                                       <div class="form-group col-md-3">
                                           <label for="choice2e">Second choice  </label>
-                                          <input type="text" class="form-control" name="choice2e" value="{{$quiz->choice2e}}">
+                                          <input type="text" class="form-control" name="choice25" value="{{$quiz->choice25}}">
                                         </div>
                         
                                      
                                           <div class="form-group col-md-3">
                                               <label for="choice3e">Third choice  </label>
-                                              <input type="text" class="form-control" name="choice3e" value="{{$quiz->choice2e}}">
+                                              <input type="text" class="form-control" name="choice35" value="{{$quiz->choice25}}">
                                             </div>
                                      
                            <hr> 
